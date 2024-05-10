@@ -1,46 +1,41 @@
-/*Crea un programa que permita al usuario ingresar dos vectores de la
-misma longitud y luego calcule su producto punto. Muestra el resultado
-al finalizar el cálculo */
-
-/*Crea un programa que permita al usuario ingresar dos vectores de la
-misma longitud y luego calcule su producto punto. Muestra el resultado
-al finalizar el cálculo */
+/*Para un grupo de clase de 8 estudiantes, realice un programa que
+permita calcular y dar como salida lo siguiente:
+✓ Cantidad de alumnos aprobados
+✓ Cantidad de alumnos reprobados
+✓ Promedio general del grupo*/
 
 #include <iostream>
 using namespace std;
 
-void productoPunto();
+int notas[8];
+int aprobados = 0;
+int reprobados = 0;
+int suma = 0;
+
+void promedioGeneral();
 
 int main(int argc, char const *argv[])
 {
-    productoPunto();
+    promedioGeneral();
     return 0;
 }
 
+void promedioGeneral(){
+    int i = 0;
+    while (i < 8)
+    {
+        cout << "Ingrese las notas de los estudiantes" << endl;
+        cin >> notas[i];
+        suma = suma + notas[i];
 
-void productoPunto()
-{
-    int n;
-    int vector1[n];
-    int vector2[n];
-    int productop = 0;
-
-    cout << "Ingrese la longitud de los vectores: ";
-    cin >> n;
-
-for (int i = 0; i < n; i++){
-    cout << "Ingrese los valores del vector 1: ";
-    cin >> vector1[i];
-}
-
-for (int i = 0; i < n; i++){
-    cout << "Ingrese los valores del vector 2: ";
-    cin >> vector2[i];
-}
-
-for (int i = 0; i < n; i++) {
-        productop += vector1[i] * vector2[i];
-}
-cout << "El producto punto de los vectores es: " << productop << endl;
-
+        if (notas[i] >= 70)
+        {
+           aprobados ++;
+        }
+        else
+        {
+            reprobados ++;
+        }
+        i++;
+    }
 }
